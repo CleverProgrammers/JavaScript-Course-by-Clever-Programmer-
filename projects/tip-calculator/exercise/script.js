@@ -2,7 +2,7 @@
 🌟 APP: Tip Calculator
 
 These are the 3 functions you must use 👇
-========================================
+=========================================
 calculateBill()
 increasePeople()
 decreasePeople()
