@@ -2,6 +2,6 @@
   deps = [
     pkgs.nodePackages.vscode-langservers-extracted
     pkgs.nodePackages.typescript-language-server
-    nodejs-16_x
+    pkgs.nodejs-16_x
   ];
 }

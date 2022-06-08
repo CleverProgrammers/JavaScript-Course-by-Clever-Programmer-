@@ -393,3 +393,6 @@ const weatherScorer = (weather, weather2) => {
 }
 
 // console.log(weatherScorer('rainy', 'sunny'))
+
+// DOG API
+// https://dog.ceo/api/breeds/image/random

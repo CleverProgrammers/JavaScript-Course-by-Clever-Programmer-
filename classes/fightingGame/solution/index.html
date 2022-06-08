@@ -10,15 +10,74 @@
 
 <body>
   
-  <div>The solution for Fighting Game</div>
+  <div class="title">The solution for Fighting Game</div>
   <br>
   
-  <button id="play">Run simulation</button>
+  <div class="menu">
+    <div class="p1Choices">
+      <img 
+      id="p1" 
+      src="https://i.gifer.com/origin/00/0019f6845ceaa9347b881ccbe8f5644a_w200.gif"
+      />
+      <button 
+        onclick = "player1.strike(player1, player2, player1.attackDmg)"  
+        id="attack"
+      >
+        Attack
+      </button>
+      
+      <button 
+        onclick = "player1.heal(player1)" 
+        id="heal"
+      >
+        Heal
+      </button>
+      
+      <div  id="p1Health">100</div>
+    </div>
 
-  <br>
-  <div class="resultContainer">
-    <div id="result">Hi</div>
+      <button id="play">Run simulation</button>
+
+    <div class="p2Choices">
+      <img 
+        id="p2" 
+        src="https://i.imgur.com/Z0QCi47.gif"
+      />
+      <button 
+        onclick = "player2.strike(player2, player1, player2.attackDmg)"  
+        id="attack"
+      >
+        Attack
+      </button>
+      <button 
+        onclick = "player2.heal(player2)" 
+        id="heal"
+      >
+        Heal
+      </button>
+      <div id="p2Health">100</div>
+    </div>
+
   </div>
+  <br>
+  
+  <div class="resultContainer">
+      <div id="result"></div>
+      <button onclick="game.reset(p1,p2)">Reset</button>
+  </div>
+
+<audio id="p1attack" controls style="display:none">
+  <source src="sounds/fastpunch.mp3" type="audio/mpeg"> 
+</audio>
+<audio id="p1heal" controls style="display:none">
+  <source src="sounds/fastheal.mp3" type="audio/mpeg"> 
+</audio>
+<audio id="p2attack" controls style="display:none">
+  <source src="sounds/quickhit.mp3" type="audio/mpeg"> 
+</audio>
+<audio id="p2heal" controls style="display:none">
+  <source src="sounds/quickheal.mp3" type="audio/mpeg"> 
+</audio>
   <script src="solution.js"></script>
 </body>
 
