@@ -1,3 +1,7 @@
+// Test you code by forking this repl: 
+// 👉 
+
+
 // The 50-30-20 strategy is a simple way to budget
 // which involves spending 50% of after-tax income on needs,
 // 30% after tax income on wants,
