@@ -404,7 +404,23 @@ const peoples = [
 
 let result = peoples.filter(people => people.netWorth > 200);
 
-playground.innerHTML = result.map(person => `<div>
-<h1>Name: ${person.name} </h1>
-<h2>netWorth: ${person.netWorth}</h2> 
-</div>`).join(" ");
+// playground.innerHTML = result.map(person => `<div>
+// <h1>Name: ${person.name} </h1>
+// <h2>netWorth: ${person.netWorth}</h2>
+// </div>`).join(" ");
+
+// Reduce
+const sumArrayWithReduce = (numbers) => {
+    let sum = numbers.reduce((number, acc) => {
+        return number + acc;
+    });
+
+    return sum;
+}
+
+// console.log(sumArrayWithReduce([1, 2, 3, 4, 5, 6]));
+
+//summing networths with reduce array method
+
+// always add the accumulator as next parameter to the call back function in reduce array method.
+console.log(peoples.reduce((prev, curr) => prev + curr.netWorth, 0));
