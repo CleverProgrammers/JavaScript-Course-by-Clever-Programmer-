@@ -324,5 +324,87 @@ const frequency = (phrase) => {
     return frequency;
 }
 
-const letters = "This is freaking amazing";
-console.log(frequency(letters));
+// const letters = "This is freaking amazing";
+// console.log(frequency(letters));
+
+//word frequency
+const wordfrequency = (phrase) => {
+    //now since wordfrequency and frequency() above have the same code we could just call frequency() and parse words array in it.
+    // let frequency = {};
+    let words = phrase.split(' ');
+
+    // for (const word of words) {
+    //     if (word in frequency) {
+    //         frequency[word] += 1;
+    //     } else {
+    //         frequency[word] = 1;
+    //     }
+    // }
+    return frequency(words);
+}
+
+// const userInput = prompt("write your sentence");
+// console.log(wordfrequency(userInput));
+
+//higher order functions
+//map -> loops and perform an action to every single element of the array and returns a new array
+
+// summing elements of an array by 2
+const sumArrays2 = (numbers) => {
+    return numbers.map(number => number + 2);
+}
+// console.log(sumArrays2([1, 3, 5, 6]));
+
+//letter frequency and word frequency with map
+const letterfrequency = (letters) => {
+    let frequency = {};
+    letters = letters.split("");
+    let newArray = letters.map((letter) => {
+        if (letter in frequency) {
+            frequency[letter] += 1
+        } else {
+            frequency[letter] = 1;
+        }
+    })
+
+    return [newArray, frequency];
+}
+
+// console.log(letterfrequency('hello world javascript is just an amazing language, I will do all to know it proficiently'));
+// console.log(letterfrequency('the quick brown fox jump over the lazy dog'));
+
+const filterArray = (array, greaterThan) => {
+    let newArray = [];
+    for (const number of array) {
+        if (number > greaterThan) {
+            newArray.push(number);
+        }
+    }
+
+    return newArray;
+}
+
+// console.log(filterArray([1, 2, 3, 4, 5, 6], 3));
+
+//Using filter array method to solve to do the exercise above
+// filter -> loops and returns an array with matching conditions
+const nums = [1, 2, 3, 4, 5, 6];
+
+const peoples = [
+    { name: 'Helon', netWorth: 200000000 },
+    { name: 'bezos', netWorth: 2000000 },
+    { name: 'Ngu', netWorth: 3000000 },
+    { name: 'smith', netWorth: 25000 },
+    { name: 'gates', netWorth: 20340000 },
+    { name: 'zuck', netWorth: 20 }
+]
+
+// console.log(nums.filter(num => num > 3));
+// console.log(peoples.filter(actor => actor.netWorth > 200));
+
+let result = peoples.filter(people => people.netWorth > 200);
+
+playground.innerHTML = result.map(person => `<div>
+<h1>Name: ${person.name} </h1>
+<h2>netWorth: ${person.netWorth}</h2> 
+</div>`).join(" ");
