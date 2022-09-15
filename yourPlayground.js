@@ -314,7 +314,8 @@ const frequency = (phrase) => {
         //check if letter exist in frequency
         if (letter in frequency) {
             //increment value by 1
-            frequency[letter] = frequency[letter] + 1;
+            //incremental operators : ++, --, += etc
+            frequency[letter] += 1;
         } else {
             frequency[letter] = 1;
         }
@@ -323,5 +324,5 @@ const frequency = (phrase) => {
     return frequency;
 }
 
-const letters = "hello world";
+const letters = "This is freaking amazing";
 console.log(frequency(letters));
